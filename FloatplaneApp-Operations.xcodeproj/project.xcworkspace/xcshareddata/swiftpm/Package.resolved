@@ -39,7 +39,7 @@
     {
       "identity" : "floatplaneapp-models",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/curiousurick/FloatplaneApp-Models.git",
+      "location" : "git@github.com:curiousurick/FloatplaneApp-Models.git",
       "state" : {
         "branch" : "main",
         "revision" : "d2d32126377cadb93a2a43f066e5c9b3287e3783"

@@ -63,15 +63,15 @@
 		5E389C5129D8C01D00FC8B4B /* FloatplaneDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E389C4E29D8BF3E00FC8B4B /* FloatplaneDecoder.swift */; };
 		5E3FC09629DE940500A5E16B /* Mocker in Frameworks */ = {isa = PBXBuildFile; productRef = 5E3FC09529DE940500A5E16B /* Mocker */; };
 		5E4CE96929DA0B7F0029110E /* GetFirstPageOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4CE96829DA0B7F0029110E /* GetFirstPageOperation.swift */; };
+		5E51553729EE70D8009B68EA /* FloatplaneApp-Utilities in Frameworks */ = {isa = PBXBuildFile; productRef = 5E51553629EE70D8009B68EA /* FloatplaneApp-Utilities */; };
+		5E51553A29EE70E2009B68EA /* FloatplaneApp-Models in Frameworks */ = {isa = PBXBuildFile; productRef = 5E51553929EE70E2009B68EA /* FloatplaneApp-Models */; };
+		5E51553D29EE70EE009B68EA /* FloatplaneApp-DataStores in Frameworks */ = {isa = PBXBuildFile; productRef = 5E51553C29EE70EE009B68EA /* FloatplaneApp-DataStores */; };
 		5E56E74229E1386F0098B302 /* StrategyBasedOperationTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E56E74129E1386F0098B302 /* StrategyBasedOperationTest.swift */; };
 		5E56E74429E13AEC0098B302 /* CacheableStrategyBasedOperationTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E56E74329E13AEC0098B302 /* CacheableStrategyBasedOperationTest.swift */; };
 		5E56E74629E140470098B302 /* MockDiskStorageWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E56E74529E140470098B302 /* MockDiskStorageWrapper.swift */; };
 		5E56E74C29E142C90098B302 /* Cache in Frameworks */ = {isa = PBXBuildFile; productRef = 5E56E74B29E142C90098B302 /* Cache */; };
 		5E56E74F29E148FF0098B302 /* FloatplaneDecoderTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E56E74E29E148FF0098B302 /* FloatplaneDecoderTest.swift */; };
 		5E56E75129E14A360098B302 /* FloatplaneEncoderTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E56E75029E14A360098B302 /* FloatplaneEncoderTest.swift */; };
-		5E81C76D29EE637D009BB58B /* FloatplaneApp-Utilities in Frameworks */ = {isa = PBXBuildFile; productRef = 5E81C76C29EE637D009BB58B /* FloatplaneApp-Utilities */; };
-		5E81C77029EE63A0009BB58B /* FloatplaneApp-DataStores in Frameworks */ = {isa = PBXBuildFile; productRef = 5E81C76F29EE63A0009BB58B /* FloatplaneApp-DataStores */; };
-		5E81C78B29EE6863009BB58B /* FloatplaneApp-Models in Frameworks */ = {isa = PBXBuildFile; productRef = 5E81C78A29EE6863009BB58B /* FloatplaneApp-Models */; };
 		5EFD929929D90D30007E8374 /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EFD929829D90D2F007E8374 /* AVKit.framework */; };
 /* End PBXBuildFile section */
 
@@ -160,11 +160,11 @@
 			files = (
 				5EFD929929D90D30007E8374 /* AVKit.framework in Frameworks */,
 				5E389B8F29D8B42600FC8B4B /* Alamofire in Frameworks */,
+				5E51553D29EE70EE009B68EA /* FloatplaneApp-DataStores in Frameworks */,
+				5E51553729EE70D8009B68EA /* FloatplaneApp-Utilities in Frameworks */,
 				5E389C4529D8BA1D00FC8B4B /* Cache in Frameworks */,
+				5E51553A29EE70E2009B68EA /* FloatplaneApp-Models in Frameworks */,
 				5E389B9529D8B45700FC8B4B /* AlamofireImage in Frameworks */,
-				5E81C77029EE63A0009BB58B /* FloatplaneApp-DataStores in Frameworks */,
-				5E81C78B29EE6863009BB58B /* FloatplaneApp-Models in Frameworks */,
-				5E81C76D29EE637D009BB58B /* FloatplaneApp-Utilities in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -427,9 +427,9 @@
 				5E389B8E29D8B42600FC8B4B /* Alamofire */,
 				5E389B9429D8B45700FC8B4B /* AlamofireImage */,
 				5E389C4429D8BA1D00FC8B4B /* Cache */,
-				5E81C76C29EE637D009BB58B /* FloatplaneApp-Utilities */,
-				5E81C76F29EE63A0009BB58B /* FloatplaneApp-DataStores */,
-				5E81C78A29EE6863009BB58B /* FloatplaneApp-Models */,
+				5E51553629EE70D8009B68EA /* FloatplaneApp-Utilities */,
+				5E51553929EE70E2009B68EA /* FloatplaneApp-Models */,
+				5E51553C29EE70EE009B68EA /* FloatplaneApp-DataStores */,
 			);
 			productName = "FloatplaneApp-Operations";
 			productReference = 5E389B2A29D8B29800FC8B4B /* FloatplaneApp_Operations.framework */;
@@ -465,7 +465,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1420;
-				LastUpgradeCheck = 1420;
+				LastUpgradeCheck = 1430;
 				TargetAttributes = {
 					5E389B2929D8B29800FC8B4B = {
 						CreatedOnToolsVersion = 14.2;
@@ -490,9 +490,9 @@
 				5E389B9329D8B45600FC8B4B /* XCRemoteSwiftPackageReference "AlamofireImage" */,
 				5E389C4329D8BA1D00FC8B4B /* XCRemoteSwiftPackageReference "Cache" */,
 				5E3FC09229DE93F600A5E16B /* XCRemoteSwiftPackageReference "Mocker" */,
-				5E81C76B29EE637D009BB58B /* XCRemoteSwiftPackageReference "FloatplaneApp-Utilities" */,
-				5E81C76E29EE63A0009BB58B /* XCRemoteSwiftPackageReference "FloatplaneApp-DataStores" */,
-				5E81C78929EE6863009BB58B /* XCRemoteSwiftPackageReference "FloatplaneApp-Models" */,
+				5E51553529EE70D8009B68EA /* XCRemoteSwiftPackageReference "FloatplaneApp-Utilities" */,
+				5E51553829EE70E2009B68EA /* XCRemoteSwiftPackageReference "FloatplaneApp-Models" */,
+				5E51553B29EE70EE009B68EA /* XCRemoteSwiftPackageReference "FloatplaneApp-DataStores" */,
 			);
 			productRefGroup = 5E389B2B29D8B29800FC8B4B /* Products */;
 			projectDirPath = "";
@@ -637,6 +637,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -699,6 +700,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -725,10 +727,12 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -743,6 +747,8 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = 13.1;
 				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu11 gnu++20";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.georgie.FloatplaneApp-Operations";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = auto;
@@ -761,10 +767,12 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -779,6 +787,8 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = 13.1;
 				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu11 gnu++20";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.georgie.FloatplaneApp-Operations";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = auto;
@@ -799,6 +809,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -828,6 +839,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -914,25 +926,25 @@
 				minimumVersion = 3.0.0;
 			};
 		};
-		5E81C76B29EE637D009BB58B /* XCRemoteSwiftPackageReference "FloatplaneApp-Utilities" */ = {
+		5E51553529EE70D8009B68EA /* XCRemoteSwiftPackageReference "FloatplaneApp-Utilities" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "git@github.com:curiousurick/FloatplaneApp-Utilities.git";
+			repositoryURL = "https://github.com/curiousurick/FloatplaneApp-Utilities.git";
 			requirement = {
 				branch = main;
 				kind = branch;
 			};
 		};
-		5E81C76E29EE63A0009BB58B /* XCRemoteSwiftPackageReference "FloatplaneApp-DataStores" */ = {
+		5E51553829EE70E2009B68EA /* XCRemoteSwiftPackageReference "FloatplaneApp-Models" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "git@github.com:curiousurick/FloatplaneApp-DataStores.git";
+			repositoryURL = "https://github.com/curiousurick/FloatplaneApp-Models.git";
 			requirement = {
 				branch = main;
 				kind = branch;
 			};
 		};
-		5E81C78929EE6863009BB58B /* XCRemoteSwiftPackageReference "FloatplaneApp-Models" */ = {
+		5E51553B29EE70EE009B68EA /* XCRemoteSwiftPackageReference "FloatplaneApp-DataStores" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "git@github.com:curiousurick/FloatplaneApp-Models.git";
+			repositoryURL = "https://github.com/curiousurick/FloatplaneApp-DataStores.git";
 			requirement = {
 				branch = main;
 				kind = branch;
@@ -961,25 +973,25 @@
 			package = 5E3FC09229DE93F600A5E16B /* XCRemoteSwiftPackageReference "Mocker" */;
 			productName = Mocker;
 		};
+		5E51553629EE70D8009B68EA /* FloatplaneApp-Utilities */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5E51553529EE70D8009B68EA /* XCRemoteSwiftPackageReference "FloatplaneApp-Utilities" */;
+			productName = "FloatplaneApp-Utilities";
+		};
+		5E51553929EE70E2009B68EA /* FloatplaneApp-Models */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5E51553829EE70E2009B68EA /* XCRemoteSwiftPackageReference "FloatplaneApp-Models" */;
+			productName = "FloatplaneApp-Models";
+		};
+		5E51553C29EE70EE009B68EA /* FloatplaneApp-DataStores */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5E51553B29EE70EE009B68EA /* XCRemoteSwiftPackageReference "FloatplaneApp-DataStores" */;
+			productName = "FloatplaneApp-DataStores";
+		};
 		5E56E74B29E142C90098B302 /* Cache */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 5E389C4329D8BA1D00FC8B4B /* XCRemoteSwiftPackageReference "Cache" */;
 			productName = Cache;
-		};
-		5E81C76C29EE637D009BB58B /* FloatplaneApp-Utilities */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 5E81C76B29EE637D009BB58B /* XCRemoteSwiftPackageReference "FloatplaneApp-Utilities" */;
-			productName = "FloatplaneApp-Utilities";
-		};
-		5E81C76F29EE63A0009BB58B /* FloatplaneApp-DataStores */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 5E81C76E29EE63A0009BB58B /* XCRemoteSwiftPackageReference "FloatplaneApp-DataStores" */;
-			productName = "FloatplaneApp-DataStores";
-		};
-		5E81C78A29EE6863009BB58B /* FloatplaneApp-Models */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 5E81C78929EE6863009BB58B /* XCRemoteSwiftPackageReference "FloatplaneApp-Models" */;
-			productName = "FloatplaneApp-Models";
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
