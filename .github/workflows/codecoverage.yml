@@ -1,0 +1,17 @@
+name: FloatplaneApp-Operation Build Workflow
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: macOS-latest
+    steps:
+      - name: Test
+        uses: actions/checkout@v1
+      - name: Run SwiftFormat and test all targets
+        run: scripts/build.sh
+        

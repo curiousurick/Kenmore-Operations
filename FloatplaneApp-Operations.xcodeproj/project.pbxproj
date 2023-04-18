@@ -66,6 +66,11 @@
 		5E51553729EE70D8009B68EA /* FloatplaneApp-Utilities in Frameworks */ = {isa = PBXBuildFile; productRef = 5E51553629EE70D8009B68EA /* FloatplaneApp-Utilities */; };
 		5E51553A29EE70E2009B68EA /* FloatplaneApp-Models in Frameworks */ = {isa = PBXBuildFile; productRef = 5E51553929EE70E2009B68EA /* FloatplaneApp-Models */; };
 		5E51553D29EE70EE009B68EA /* FloatplaneApp-DataStores in Frameworks */ = {isa = PBXBuildFile; productRef = 5E51553C29EE70EE009B68EA /* FloatplaneApp-DataStores */; };
+		5E51557629EE781D009B68EA /* swiftformat.sh in Resources */ = {isa = PBXBuildFile; fileRef = 5E51557329EE781D009B68EA /* swiftformat.sh */; };
+		5E51557729EE781D009B68EA /* xcodebuilds.sh in Resources */ = {isa = PBXBuildFile; fileRef = 5E51557429EE781D009B68EA /* xcodebuilds.sh */; };
+		5E51557829EE781D009B68EA /* build.sh in Resources */ = {isa = PBXBuildFile; fileRef = 5E51557529EE781D009B68EA /* build.sh */; };
+		5E51557A29EE7821009B68EA /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 5E51557929EE7821009B68EA /* README.md */; };
+		5E51557C29EE782E009B68EA /* codecoverage.yml in Resources */ = {isa = PBXBuildFile; fileRef = 5E51557B29EE782E009B68EA /* codecoverage.yml */; };
 		5E56E74229E1386F0098B302 /* StrategyBasedOperationTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E56E74129E1386F0098B302 /* StrategyBasedOperationTest.swift */; };
 		5E56E74429E13AEC0098B302 /* CacheableStrategyBasedOperationTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E56E74329E13AEC0098B302 /* CacheableStrategyBasedOperationTest.swift */; };
 		5E56E74629E140470098B302 /* MockDiskStorageWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E56E74529E140470098B302 /* MockDiskStorageWrapper.swift */; };
@@ -142,6 +147,11 @@
 		5E389C4C29D8BE0D00FC8B4B /* OperationConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationConstants.swift; sourceTree = "<group>"; };
 		5E389C4E29D8BF3E00FC8B4B /* FloatplaneDecoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FloatplaneDecoder.swift; sourceTree = "<group>"; };
 		5E4CE96829DA0B7F0029110E /* GetFirstPageOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFirstPageOperation.swift; sourceTree = "<group>"; };
+		5E51557329EE781D009B68EA /* swiftformat.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = swiftformat.sh; sourceTree = "<group>"; };
+		5E51557429EE781D009B68EA /* xcodebuilds.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = xcodebuilds.sh; sourceTree = "<group>"; };
+		5E51557529EE781D009B68EA /* build.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = build.sh; sourceTree = "<group>"; };
+		5E51557929EE7821009B68EA /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
+		5E51557B29EE782E009B68EA /* codecoverage.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; name = codecoverage.yml; path = .github/workflows/codecoverage.yml; sourceTree = SOURCE_ROOT; };
 		5E56E74129E1386F0098B302 /* StrategyBasedOperationTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrategyBasedOperationTest.swift; sourceTree = "<group>"; };
 		5E56E74329E13AEC0098B302 /* CacheableStrategyBasedOperationTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheableStrategyBasedOperationTest.swift; sourceTree = "<group>"; };
 		5E56E74529E140470098B302 /* MockDiskStorageWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDiskStorageWrapper.swift; sourceTree = "<group>"; };
@@ -324,6 +334,7 @@
 		5E389B2029D8B29800FC8B4B = {
 			isa = PBXGroup;
 			children = (
+				5E51557229EE781D009B68EA /* scripts */,
 				5E389B2C29D8B29800FC8B4B /* FloatplaneApp-Operations */,
 				5E389B3829D8B29900FC8B4B /* FloatplaneApp-OperationsTests */,
 				5E389B2B29D8B29800FC8B4B /* Products */,
@@ -385,6 +396,18 @@
 				5E389B9929D8B55400FC8B4B /* FloatplaneApp_Models.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5E51557229EE781D009B68EA /* scripts */ = {
+			isa = PBXGroup;
+			children = (
+				5E51557929EE7821009B68EA /* README.md */,
+				5E51557329EE781D009B68EA /* swiftformat.sh */,
+				5E51557429EE781D009B68EA /* xcodebuilds.sh */,
+				5E51557B29EE782E009B68EA /* codecoverage.yml */,
+				5E51557529EE781D009B68EA /* build.sh */,
+			);
+			path = scripts;
 			sourceTree = "<group>";
 		};
 		5E56E74D29E148F10098B302 /* Coding */ = {
@@ -509,7 +532,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E51557729EE781D009B68EA /* xcodebuilds.sh in Resources */,
+				5E51557829EE781D009B68EA /* build.sh in Resources */,
+				5E51557A29EE7821009B68EA /* README.md in Resources */,
 				5E389BFE29D8B63B00FC8B4B /* FloatplaneApp_Operations.docc in Resources */,
+				5E51557629EE781D009B68EA /* swiftformat.sh in Resources */,
+				5E51557C29EE782E009B68EA /* codecoverage.yml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
