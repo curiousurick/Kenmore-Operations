@@ -1,0 +1,86 @@
+{
+  "pins" : [
+    {
+      "identity" : "alamofire",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Alamofire/Alamofire.git",
+      "state" : {
+        "revision" : "78424be314842833c04bc3bef5b72e85fff99204",
+        "version" : "5.6.4"
+      }
+    },
+    {
+      "identity" : "alamofireimage",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Alamofire/AlamofireImage.git",
+      "state" : {
+        "branch" : "master",
+        "revision" : "af1c41645ef2d3ab48ffb3fb3a11941c71e5f9a0"
+      }
+    },
+    {
+      "identity" : "cache",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/hyperoslo/Cache.git",
+      "state" : {
+        "revision" : "c7f4d633049c3bd649a353bad36f6c17e9df085f",
+        "version" : "6.0.0"
+      }
+    },
+    {
+      "identity" : "floatplaneapp-datastores",
+      "kind" : "remoteSourceControl",
+      "location" : "git@github.com:curiousurick/FloatplaneApp-DataStores.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "948285546ede2da09443092bf77e739c07331162"
+      }
+    },
+    {
+      "identity" : "floatplaneapp-models",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/curiousurick/FloatplaneApp-Models.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "d2d32126377cadb93a2a43f066e5c9b3287e3783"
+      }
+    },
+    {
+      "identity" : "floatplaneapp-utilities",
+      "kind" : "remoteSourceControl",
+      "location" : "git@github.com:curiousurick/FloatplaneApp-Utilities.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "159cdfc04355ab3cfba69f0498f29654bce9b1ed"
+      }
+    },
+    {
+      "identity" : "mocker",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/WeTransfer/Mocker.git",
+      "state" : {
+        "revision" : "4384e015cae4916a6828252467a4437173c7ae17",
+        "version" : "3.0.1"
+      }
+    },
+    {
+      "identity" : "swift-log",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/apple/swift-log.git",
+      "state" : {
+        "revision" : "32e8d724467f8fe623624570367e3d50c5638e46",
+        "version" : "1.5.2"
+      }
+    },
+    {
+      "identity" : "uickeychainstore",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/kishikawakatsumi/UICKeyChainStore.git",
+      "state" : {
+        "branch" : "master",
+        "revision" : "db869212bc69b6198a62efe03e2f5fc8e19c6b65"
+      }
+    }
+  ],
+  "version" : 2
+}
