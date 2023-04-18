@@ -1,11 +1,5 @@
 # FloatplaneApp-Operations
-This is the networking library for FloatplaneApp for iOS. It contains all the API operation logic for the app.
-
-| ![image](Assets/Browse_Screenshot.png) | ![image](Assets/LiveOffline_Screenshot.png) |
-| --- | --- |
-
-| ![image](Assets/Search_Screenshot.png) | ![image](Assets/Login_Screenshot.png) |
-| --- | --- |
+This is the networking library for FloatplaneApp for iOS and tvOS. It contains all the API operation logic for the app.
 
 # Setup
 Follow these instructions to get this app installed on your Apple TV or tvOS simulator.
