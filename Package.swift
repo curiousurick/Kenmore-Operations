@@ -78,14 +78,16 @@ let package = Package(
                 "Alamofire",
                 "AlamofireImage",
                 "Cache",
-                "Mocker",
             ],
             path: "FloatplaneApp-Operations",
             exclude: []
         ),
         .testTarget(
             name: "FloatplaneApp-OperationsTests",
-            dependencies: ["FloatplaneApp-Operations"],
+            dependencies: [
+                "FloatplaneApp-Operations",
+                "Mocker",
+            ],
             path: "FloatplaneApp-OperationsTests",
             exclude: [],
             resources: []
