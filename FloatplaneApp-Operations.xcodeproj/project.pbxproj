@@ -69,9 +69,9 @@
 		5E56E74C29E142C90098B302 /* Cache in Frameworks */ = {isa = PBXBuildFile; productRef = 5E56E74B29E142C90098B302 /* Cache */; };
 		5E56E74F29E148FF0098B302 /* FloatplaneDecoderTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E56E74E29E148FF0098B302 /* FloatplaneDecoderTest.swift */; };
 		5E56E75129E14A360098B302 /* FloatplaneEncoderTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E56E75029E14A360098B302 /* FloatplaneEncoderTest.swift */; };
-		5E81C70929EE4978009BB58B /* FloatplaneApp-Models in Frameworks */ = {isa = PBXBuildFile; productRef = 5E81C70829EE4978009BB58B /* FloatplaneApp-Models */; };
 		5E81C76D29EE637D009BB58B /* FloatplaneApp-Utilities in Frameworks */ = {isa = PBXBuildFile; productRef = 5E81C76C29EE637D009BB58B /* FloatplaneApp-Utilities */; };
 		5E81C77029EE63A0009BB58B /* FloatplaneApp-DataStores in Frameworks */ = {isa = PBXBuildFile; productRef = 5E81C76F29EE63A0009BB58B /* FloatplaneApp-DataStores */; };
+		5E81C78B29EE6863009BB58B /* FloatplaneApp-Models in Frameworks */ = {isa = PBXBuildFile; productRef = 5E81C78A29EE6863009BB58B /* FloatplaneApp-Models */; };
 		5EFD929929D90D30007E8374 /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EFD929829D90D2F007E8374 /* AVKit.framework */; };
 /* End PBXBuildFile section */
 
@@ -163,7 +163,7 @@
 				5E389C4529D8BA1D00FC8B4B /* Cache in Frameworks */,
 				5E389B9529D8B45700FC8B4B /* AlamofireImage in Frameworks */,
 				5E81C77029EE63A0009BB58B /* FloatplaneApp-DataStores in Frameworks */,
-				5E81C70929EE4978009BB58B /* FloatplaneApp-Models in Frameworks */,
+				5E81C78B29EE6863009BB58B /* FloatplaneApp-Models in Frameworks */,
 				5E81C76D29EE637D009BB58B /* FloatplaneApp-Utilities in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -427,9 +427,9 @@
 				5E389B8E29D8B42600FC8B4B /* Alamofire */,
 				5E389B9429D8B45700FC8B4B /* AlamofireImage */,
 				5E389C4429D8BA1D00FC8B4B /* Cache */,
-				5E81C70829EE4978009BB58B /* FloatplaneApp-Models */,
 				5E81C76C29EE637D009BB58B /* FloatplaneApp-Utilities */,
 				5E81C76F29EE63A0009BB58B /* FloatplaneApp-DataStores */,
+				5E81C78A29EE6863009BB58B /* FloatplaneApp-Models */,
 			);
 			productName = "FloatplaneApp-Operations";
 			productReference = 5E389B2A29D8B29800FC8B4B /* FloatplaneApp_Operations.framework */;
@@ -490,9 +490,9 @@
 				5E389B9329D8B45600FC8B4B /* XCRemoteSwiftPackageReference "AlamofireImage" */,
 				5E389C4329D8BA1D00FC8B4B /* XCRemoteSwiftPackageReference "Cache" */,
 				5E3FC09229DE93F600A5E16B /* XCRemoteSwiftPackageReference "Mocker" */,
-				5E81C70729EE4978009BB58B /* XCRemoteSwiftPackageReference "FloatplaneApp-Models" */,
 				5E81C76B29EE637D009BB58B /* XCRemoteSwiftPackageReference "FloatplaneApp-Utilities" */,
 				5E81C76E29EE63A0009BB58B /* XCRemoteSwiftPackageReference "FloatplaneApp-DataStores" */,
+				5E81C78929EE6863009BB58B /* XCRemoteSwiftPackageReference "FloatplaneApp-Models" */,
 			);
 			productRefGroup = 5E389B2B29D8B29800FC8B4B /* Products */;
 			projectDirPath = "";
@@ -914,14 +914,6 @@
 				minimumVersion = 3.0.0;
 			};
 		};
-		5E81C70729EE4978009BB58B /* XCRemoteSwiftPackageReference "FloatplaneApp-Models" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/curiousurick/FloatplaneApp-Models.git";
-			requirement = {
-				branch = main;
-				kind = branch;
-			};
-		};
 		5E81C76B29EE637D009BB58B /* XCRemoteSwiftPackageReference "FloatplaneApp-Utilities" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "git@github.com:curiousurick/FloatplaneApp-Utilities.git";
@@ -933,6 +925,14 @@
 		5E81C76E29EE63A0009BB58B /* XCRemoteSwiftPackageReference "FloatplaneApp-DataStores" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "git@github.com:curiousurick/FloatplaneApp-DataStores.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+		5E81C78929EE6863009BB58B /* XCRemoteSwiftPackageReference "FloatplaneApp-Models" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "git@github.com:curiousurick/FloatplaneApp-Models.git";
 			requirement = {
 				branch = main;
 				kind = branch;
@@ -966,11 +966,6 @@
 			package = 5E389C4329D8BA1D00FC8B4B /* XCRemoteSwiftPackageReference "Cache" */;
 			productName = Cache;
 		};
-		5E81C70829EE4978009BB58B /* FloatplaneApp-Models */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 5E81C70729EE4978009BB58B /* XCRemoteSwiftPackageReference "FloatplaneApp-Models" */;
-			productName = "FloatplaneApp-Models";
-		};
 		5E81C76C29EE637D009BB58B /* FloatplaneApp-Utilities */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 5E81C76B29EE637D009BB58B /* XCRemoteSwiftPackageReference "FloatplaneApp-Utilities" */;
@@ -980,6 +975,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 5E81C76E29EE63A0009BB58B /* XCRemoteSwiftPackageReference "FloatplaneApp-DataStores" */;
 			productName = "FloatplaneApp-DataStores";
+		};
+		5E81C78A29EE6863009BB58B /* FloatplaneApp-Models */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5E81C78929EE6863009BB58B /* XCRemoteSwiftPackageReference "FloatplaneApp-Models" */;
+			productName = "FloatplaneApp-Models";
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
