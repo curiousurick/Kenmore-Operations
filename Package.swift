@@ -26,7 +26,7 @@
 import PackageDescription
 
 let package = Package(
-    name: "FloatplaneApp-Operations",
+    name: "Kenmore-Operations",
     platforms: [
         .macOS(.v13),
         .iOS(.v16),
@@ -34,21 +34,21 @@ let package = Package(
     ],
     products: [
         .library(
-            name: "FloatplaneApp-Operations",
-            targets: ["FloatplaneApp-Operations"]
+            name: "Kenmore-Operations",
+            targets: ["Kenmore-Operations"]
         ),
     ],
     dependencies: [
         .package(
-            url: "https://github.com/curiousurick/FloatplaneApp-Models",
+            url: "https://github.com/curiousurick/Kenmore-Models",
             branch: "main"
         ),
         .package(
-            url: "https://github.com/curiousurick/FloatplaneApp-Utilities",
+            url: "https://github.com/curiousurick/Kenmore-Utilities",
             branch: "main"
         ),
         .package(
-            url: "https://github.com/curiousurick/FloatplaneApp-DataStores",
+            url: "https://github.com/curiousurick/Kenmore-DataStores",
             branch: "main"
         ),
         .package(
@@ -70,25 +70,25 @@ let package = Package(
     ],
     targets: [
         .target(
-            name: "FloatplaneApp-Operations",
+            name: "Kenmore-Operations",
             dependencies: [
-                "FloatplaneApp-Models",
-                "FloatplaneApp-Utilities",
-                "FloatplaneApp-DataStores",
+                "Kenmore-Models",
+                "Kenmore-Utilities",
+                "Kenmore-DataStores",
                 "Alamofire",
                 "AlamofireImage",
                 "Cache",
             ],
-            path: "FloatplaneApp-Operations",
+            path: "Kenmore-Operations",
             exclude: []
         ),
         .testTarget(
-            name: "FloatplaneApp-OperationsTests",
+            name: "Kenmore-OperationsTests",
             dependencies: [
-                "FloatplaneApp-Operations",
+                "Kenmore-Operations",
                 "Mocker",
             ],
-            path: "FloatplaneApp-OperationsTests",
+            path: "Kenmore-OperationsTests",
             exclude: [],
             resources: []
         ),

@@ -5,8 +5,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/Alamofire/Alamofire.git",
       "state" : {
-        "revision" : "bc268c28fb170f494de9e9927c371b8342979ece",
-        "version" : "5.7.1"
+        "revision" : "78424be314842833c04bc3bef5b72e85fff99204",
+        "version" : "5.6.4"
       }
     },
     {
@@ -14,8 +14,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/Alamofire/AlamofireImage.git",
       "state" : {
-        "revision" : "98cbb00ce0ec5fc8e52a5b50a6bfc08d3e5aee10",
-        "version" : "4.2.0"
+        "branch" : "master",
+        "revision" : "af1c41645ef2d3ab48ffb3fb3a11941c71e5f9a0"
       }
     },
     {
@@ -30,7 +30,7 @@
     {
       "identity" : "kenmore-datastores",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/curiousurick/Kenmore-DataStores",
+      "location" : "git@github.com:curiousurick/Kenmore-DataStores.git",
       "state" : {
         "branch" : "main",
         "revision" : "8f2fc1c1b986f125980e9bf5f57ac93bb5a08031"
@@ -39,7 +39,7 @@
     {
       "identity" : "kenmore-models",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/curiousurick/Kenmore-Models",
+      "location" : "git@github.com:curiousurick/Kenmore-Models.git",
       "state" : {
         "branch" : "main",
         "revision" : "eae4a343c12be17f7d8b6e153e29525775a570f3"
@@ -48,7 +48,7 @@
     {
       "identity" : "kenmore-utilities",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/curiousurick/Kenmore-Utilities",
+      "location" : "git@github.com:curiousurick/Kenmore-Utilities.git",
       "state" : {
         "branch" : "main",
         "revision" : "b67cabc33015655c9615e3b89868c3d9d9060c87"
