@@ -10,4 +10,4 @@ Follow these instructions to get this app installed on your Apple TV or tvOS sim
 5. Hit the play button or type CMD+B to compile the library. CMD+U to run unit tests. 
 
 # Thanks
-Thanks so much to Linus Sebastian, Luke Lafreniere, and all of LMG. Special thanks to the entire Floatplane team for building the infrastructure and cloud APIs that made this such an easy project for me.
+Thanks to Linus Media Group. Special thanks to the entire Floatplane team for building the infrastructure and cloud APIs that made this such an easy project for me.
