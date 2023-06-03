@@ -23,9 +23,40 @@ import XCTest
 import Kenmore_Models
 @testable import Kenmore_Operations
 
+extension BaseCreator {
+    func copy(with creatorId: String) -> BaseCreator {
+        BaseCreator(
+            about: about,
+            category: category,
+            cover: cover,
+            defaultChannel: defaultChannel,
+            description: description,
+            discoverable: discoverable,
+            icon: icon,
+            id: creatorId,
+            incomeDisplay: incomeDisplay,
+            liveStream: liveStream,
+            owner: owner,
+            subscriberCountDisplay: subscriberCountDisplay,
+            title: title,
+            urlname: urlname
+        )
+    }
+}
+
+extension CreatorListResponse.CreatorResponseObject {
+    func copy(with creator: BaseCreator) -> CreatorListResponse.CreatorResponseObject {
+        CreatorListResponse.CreatorResponseObject(
+            creator: creator,
+            userNotificationSetting: userNotificationSetting
+        )
+    }
+}
+
 class GetFirstPageOperationTest: XCTestCase {
     private let creatorRequest = TestModelSupplier.creatorRequest
     private let creator = TestModelSupplier.creator
+    private let activeCreatorId = "linustechstonks"
 
     /// Mocks
     private var mockCreatorOperation: MockCacheableStrategyBasedOperation<CreatorRequest, Creator>!
@@ -42,8 +73,10 @@ class GetFirstPageOperationTest: XCTestCase {
         mockCreatorListOperation = MockCacheableStrategyBasedOperation()
 
         // Default setup for happy case
-        let creatorListResponse = TestModelSupplier.creatorListResponse
-        let activeBaseCreator = creatorListResponse.creators[0]
+        let firstCreatorObject = TestModelSupplier.creatorResponseObject
+        let creatorListResponse = CreatorListResponse(responseObjects: [firstCreatorObject])
+
+        let firstBaseCreator = creatorListResponse.creators[0]
         mockCreatorListOperation.mockGet = { request in
             if request == TestModelSupplier.creatorListRequest {
                 return OperationResponse(response: creatorListResponse, error: nil)
@@ -57,7 +90,7 @@ class GetFirstPageOperationTest: XCTestCase {
             return OperationResponse(response: nil, error: nil)
         }
         mockContentFeedOperation.mockGet = { request in
-            if request == ContentFeedRequest.firstPage(for: activeBaseCreator.id) {
+            if request == ContentFeedRequest.firstPage(for: firstBaseCreator.id) {
                 return OperationResponse(response: TestModelSupplier.creatorFeed, error: nil)
             }
             return OperationResponse(response: nil, error: nil)
@@ -70,7 +103,7 @@ class GetFirstPageOperationTest: XCTestCase {
         )
     }
 
-    func testGetHappyCase() async {
+    func testGetHappyCase_noActiveCreator() async {
         // Act
         let getFirstPageRequest = GetFirstPageRequest()
         let result = await subject.get(request: getFirstPageRequest)
@@ -82,6 +115,105 @@ class GetFirstPageOperationTest: XCTestCase {
         let expectedCreator = TestModelSupplier.creator
         XCTAssertEqual(response.activeCreator, expectedCreator)
         let expectedBaseCreators = TestModelSupplier.creatorListResponse.creators
+        XCTAssertEqual(response.baseCreators, expectedBaseCreators)
+        let expectedFeed = TestModelSupplier.creatorFeed
+        XCTAssertEqual(response.firstPage, expectedFeed.items)
+
+        XCTAssertEqual(mockCreatorListOperation.getCallCount, 1)
+        XCTAssertEqual(mockCreatorOperation.getCallCount, 1)
+        XCTAssertEqual(mockContentFeedOperation.getCallCount, 1)
+    }
+
+    func testGetHappyCase_nilActiveCreator() async {
+        // Act
+        let getFirstPageRequest = GetFirstPageRequest(activeCreatorId: nil)
+        let result = await subject.get(request: getFirstPageRequest)
+
+        // Assert
+        XCTAssertNil(result.error)
+        XCTAssertNotNil(result.response)
+        let response = result.response!
+        let expectedCreator = TestModelSupplier.creator
+        XCTAssertEqual(response.activeCreator, expectedCreator)
+        let expectedBaseCreators = TestModelSupplier.creatorListResponse.creators
+        XCTAssertEqual(response.baseCreators, expectedBaseCreators)
+        let expectedFeed = TestModelSupplier.creatorFeed
+        XCTAssertEqual(response.firstPage, expectedFeed.items)
+
+        XCTAssertEqual(mockCreatorListOperation.getCallCount, 1)
+        XCTAssertEqual(mockCreatorOperation.getCallCount, 1)
+        XCTAssertEqual(mockContentFeedOperation.getCallCount, 1)
+    }
+
+    func testGetHappyCase_withActiveCreator() async {
+        // Arrange
+        let firstCreatorObject = TestModelSupplier.creatorResponseObject
+        let activeBaseCreator = firstCreatorObject.creator.copy(with: activeCreatorId)
+        let secondCreatorObject = firstCreatorObject.copy(with: activeBaseCreator)
+        let expectedBaseCreators = [firstCreatorObject.creator, secondCreatorObject.creator]
+        let creatorListResponse = CreatorListResponse(responseObjects: [firstCreatorObject, secondCreatorObject])
+        mockCreatorListOperation.mockGet = { request in
+            if request == TestModelSupplier.creatorListRequest {
+                return OperationResponse(response: creatorListResponse, error: nil)
+            }
+            return OperationResponse(response: nil, error: nil)
+        }
+        mockContentFeedOperation.mockGet = { request in
+            if request == ContentFeedRequest.firstPage(for: self.activeCreatorId) {
+                return OperationResponse(response: TestModelSupplier.creatorFeed, error: nil)
+            }
+            return OperationResponse(response: nil, error: nil)
+        }
+
+        // Act
+        let getFirstPageRequest = GetFirstPageRequest(activeCreatorId: activeCreatorId)
+        let result = await subject.get(request: getFirstPageRequest)
+
+        // Assert
+        XCTAssertNil(result.error)
+        XCTAssertNotNil(result.response)
+        let response = result.response!
+        let expectedCreator = TestModelSupplier.creator
+        XCTAssertEqual(response.activeCreator, expectedCreator)
+        XCTAssertEqual(response.baseCreators, expectedBaseCreators)
+        let expectedFeed = TestModelSupplier.creatorFeed
+        XCTAssertEqual(response.firstPage, expectedFeed.items)
+
+        XCTAssertEqual(mockCreatorListOperation.getCallCount, 1)
+        XCTAssertEqual(mockCreatorOperation.getCallCount, 1)
+        XCTAssertEqual(mockContentFeedOperation.getCallCount, 1)
+    }
+
+    func testGetHappyCase_withActiveCreator_noMatchPicksFirst() async {
+        // Arrange
+        let firstCreatorObject = TestModelSupplier.creatorResponseObject
+        let activeBaseCreator = firstCreatorObject.creator.copy(with: "unknownActiveCreatorId")
+        let secondCreatorObject = firstCreatorObject.copy(with: activeBaseCreator)
+        let expectedBaseCreators = [firstCreatorObject.creator, secondCreatorObject.creator]
+        let creatorListResponse = CreatorListResponse(responseObjects: [firstCreatorObject, secondCreatorObject])
+        mockCreatorListOperation.mockGet = { request in
+            if request == TestModelSupplier.creatorListRequest {
+                return OperationResponse(response: creatorListResponse, error: nil)
+            }
+            return OperationResponse(response: nil, error: nil)
+        }
+        mockContentFeedOperation.mockGet = { request in
+            if request == ContentFeedRequest.firstPage(for: firstCreatorObject.creator.id) {
+                return OperationResponse(response: TestModelSupplier.creatorFeed, error: nil)
+            }
+            return OperationResponse(response: nil, error: nil)
+        }
+
+        // Act
+        let getFirstPageRequest = GetFirstPageRequest(activeCreatorId: activeCreatorId)
+        let result = await subject.get(request: getFirstPageRequest)
+
+        // Assert
+        XCTAssertNil(result.error)
+        XCTAssertNotNil(result.response)
+        let response = result.response!
+        let expectedCreator = TestModelSupplier.creator
+        XCTAssertEqual(response.activeCreator, expectedCreator)
         XCTAssertEqual(response.baseCreators, expectedBaseCreators)
         let expectedFeed = TestModelSupplier.creatorFeed
         XCTAssertEqual(response.firstPage, expectedFeed.items)

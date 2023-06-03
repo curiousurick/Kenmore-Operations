@@ -51,12 +51,19 @@ class GetFirstPageOperationImpl: GetFirstPageOperation {
     }
 
     /// Asynchronous retrieves the first page of data required to display the browse page
-    func get(request _: GetFirstPageRequest) async -> OperationResponse<GetFirstPageResponse> {
+    func get(request: GetFirstPageRequest) async -> OperationResponse<GetFirstPageResponse> {
         async let baseCreatorsAsync = creatorListOperation.get(request: CreatorListRequest())
         guard let baseCreators = await baseCreatorsAsync.response?.creators, !baseCreators.isEmpty else {
             return await OperationResponse(response: nil, error: baseCreatorsAsync.error)
         }
-        let activeBaseCreator = baseCreators[0]
+        var activeBaseCreator: BaseCreator!
+        if let activeCreatorId = request.activeCreatorId,
+           let matchingCreator = baseCreators.first(where: { $0.id == activeCreatorId }) {
+            activeBaseCreator = matchingCreator
+        }
+        else {
+            activeBaseCreator = baseCreators[0]
+        }
         let creatorRequest = CreatorRequest(named: activeBaseCreator.urlname)
         async let activeCreatorAsync = creatorOperation.get(request: creatorRequest)
         let contentFeedRequest = ContentFeedRequest.firstPage(for: activeBaseCreator.id)
