@@ -23,7 +23,7 @@ import Foundation
 
 /// Standard decoder for any API Operations whose responses contain a special type that Alamofire cannot decode
 /// immediately.
-class FloatplaneDecoder: JSONDecoder {
+class FloatplaneDecoder: JSONDecoder, @unchecked Sendable {
     override init() {
         super.init()
         configureDataDecoding()
