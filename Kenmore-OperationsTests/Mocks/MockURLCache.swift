@@ -21,7 +21,7 @@
 
 import Foundation
 
-class MockURLCache: URLCache {
+class MockURLCache: URLCache, @unchecked Sendable {
     var removeAllCachedResponsesCallCount = 0
     override func removeAllCachedResponses() {
         removeAllCachedResponsesCallCount += 1

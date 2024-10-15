@@ -130,13 +130,14 @@ enum TestModelSupplier {
     static let videoType = VideoType.blogPost
     static let videoAttachment = "video.mp4"
     static let wasReleasedSilently = true
-    static let feedItem = FeedItem(
+    static let availableFeedItem = AvailableFeedItem(
         attachmentOrder: [attachmentOrder], audioAttachments: [audioAttachment], channel: channel, comments: comments,
         creator: contentCreator, dislikes: dislikes, galleryAttachments: [galleryAttachment], guid: guid, id: id,
         likes: likes, metadata: metadata, pictureAttachments: [pictureAttachment], releaseDate: releaseDate,
         score: score, tags: [tag], text: text, thumbnail: icon, title: title, type: videoType,
         videoAttachments: [videoAttachment], wasReleasedSilently: wasReleasedSilently
     )
+    static let feedItem = FeedItem(availableItem: availableFeedItem)
     static let creatorFeed = CreatorFeed(items: [feedItem])
 
     static let creatorListRequest = CreatorListRequest()
@@ -204,9 +205,9 @@ enum TestModelSupplier {
     static let resource = DeliveryKey.Resource(data: resourceData, uri: uri)
     static let deliveryKey = DeliveryKey(cdn: cdn, resource: resource, strategy: strategy)
 
-    static let videoMetadataRequest = VideoMetadataRequest(feedItem: feedItem, id: id)
+    static let videoMetadataRequest = VideoMetadataRequest(feedItem: availableFeedItem, id: id)
     static let videoMetadata = VideoMetadata(
-        feedItem: feedItem,
+        feedItem: availableFeedItem,
         contentVideoResponse: contentVideoResponse,
         deliveryKey: deliveryKey
     )

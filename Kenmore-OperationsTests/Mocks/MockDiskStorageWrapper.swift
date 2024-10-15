@@ -24,7 +24,7 @@ import XCTest
 import Foundation
 @testable import Kenmore_DataStores
 
-extension Expiry: Equatable {
+extension Expiry: @retroactive Equatable {
     public static func == (lhs: Expiry, rhs: Expiry) -> Bool {
         lhs.date == rhs.date
     }
@@ -63,15 +63,15 @@ class MockDiskStorageWrapper<K: Hashable & Equatable, V: Codable & Equatable>: D
     }
 
     var removeExpiredObjectsCallCount = 0
-    var receivedRemoveExpiredObjectCompletion: ((Result<Void>) -> Void)?
-    override func removeExpiredObjects(completion: ((Result<Void>) -> Void)? = nil) {
+    var receivedRemoveExpiredObjectCompletion: ((Result<Void, Error>) -> Void)?
+    override func removeExpiredObjects(completion: ((Result<Void, Error>) -> Void)? = nil) {
         removeExpiredObjectsCallCount += 1
         receivedRemoveExpiredObjectCompletion = completion
     }
 
     var removeAllCallCount = 0
-    var receivedRemoveAllCompletion: ((Result<Void>) -> Void)?
-    override func removeAll(completion: ((Result<Void>) -> Void)? = nil) {
+    var receivedRemoveAllCompletion: ((Result<Void, Error>) -> Void)?
+    override func removeAll(completion: ((Result<Void, Error>) -> Void)? = nil) {
         removeAllCallCount += 1
         receivedRemoveAllCompletion = completion
     }

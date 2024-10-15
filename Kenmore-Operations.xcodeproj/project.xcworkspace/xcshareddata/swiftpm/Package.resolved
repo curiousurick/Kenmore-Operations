@@ -1,13 +1,13 @@
 {
-  "originHash" : "feda66256b8a92051275eb95a834a243c207e43721cbcdfcf64d25f1f66d6375",
+  "originHash" : "e82bafb3c8b77c71e53f3e84d7913738a385b7dde73a260409bde3e74448a7f7",
   "pins" : [
     {
       "identity" : "alamofire",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/Alamofire/Alamofire.git",
       "state" : {
-        "revision" : "bc268c28fb170f494de9e9927c371b8342979ece",
-        "version" : "5.7.1"
+        "revision" : "ea6a94b7dddffd0ca4d0f29252d95310b84dec84",
+        "version" : "5.10.0"
       }
     },
     {
@@ -16,7 +16,7 @@
       "location" : "https://github.com/Alamofire/AlamofireImage.git",
       "state" : {
         "branch" : "master",
-        "revision" : "8f4d7a73d657f61309722133e57dd7ed502ee392"
+        "revision" : "25da70a7b8f2f1b8c678be123fda5d9a98fac638"
       }
     },
     {
@@ -24,8 +24,35 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/hyperoslo/Cache.git",
       "state" : {
-        "revision" : "c7f4d633049c3bd649a353bad36f6c17e9df085f",
-        "version" : "6.0.0"
+        "revision" : "ad6abdf2a3a866288a7dad2c4e13379406002a81",
+        "version" : "6.2.0"
+      }
+    },
+    {
+      "identity" : "kenmore-datastores",
+      "kind" : "remoteSourceControl",
+      "location" : "git@github.com:curiousurick/Kenmore-DataStores.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "dd8b414e047a3ae73b3943208859eb324c5afa7d"
+      }
+    },
+    {
+      "identity" : "kenmore-models",
+      "kind" : "remoteSourceControl",
+      "location" : "git@github.com:curiousurick/Kenmore-Models.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "d672b0e91f8615909d6ea671abb663e0b2a40c1f"
+      }
+    },
+    {
+      "identity" : "kenmore-utilities",
+      "kind" : "remoteSourceControl",
+      "location" : "git@github.com:curiousurick/Kenmore-Utilities.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "3f5e20d6817e5225cd65302d4087d12813ef0fb7"
       }
     },
     {
@@ -33,8 +60,26 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/WeTransfer/Mocker.git",
       "state" : {
-        "revision" : "4384e015cae4916a6828252467a4437173c7ae17",
-        "version" : "3.0.1"
+        "revision" : "95fa785c751f6bc40c49e112d433c3acf8417a97",
+        "version" : "3.0.2"
+      }
+    },
+    {
+      "identity" : "swift-log",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/apple/swift-log.git",
+      "state" : {
+        "revision" : "9cb486020ebf03bfa5b5df985387a14a98744537",
+        "version" : "1.6.1"
+      }
+    },
+    {
+      "identity" : "uickeychainstore",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/kishikawakatsumi/UICKeyChainStore.git",
+      "state" : {
+        "branch" : "master",
+        "revision" : "db869212bc69b6198a62efe03e2f5fc8e19c6b65"
       }
     }
   ],

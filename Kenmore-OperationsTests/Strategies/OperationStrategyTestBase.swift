@@ -140,7 +140,7 @@ class OperationStrategyTestBase<T: InternalOperationStrategy>: XCTestCase {
         }
         var mock = Mock(
             url: urlRequest.url!,
-            dataType: .json,
+            contentType: .json,
             statusCode: 200,
             data: jsonMap,
             additionalHeaders: additionalHeaders
@@ -161,7 +161,7 @@ class OperationStrategyTestBase<T: InternalOperationStrategy>: XCTestCase {
         let error = URLError(.badServerResponse)
         var mock = Mock(
             url: urlRequest.url!,
-            dataType: .json,
+            contentType: .json,
             statusCode: statusCode,
             data: [method: Data()],
             additionalHeaders: additionalHeaders,
@@ -184,7 +184,7 @@ class OperationStrategyTestBase<T: InternalOperationStrategy>: XCTestCase {
         let jsonData = try JSONEncoder().encode(response)
         var mock = Mock(
             url: urlRequest.url!,
-            dataType: .json,
+            contentType: .json,
             statusCode: 200,
             data: [method: jsonData],
             additionalHeaders: additionalHeaders
